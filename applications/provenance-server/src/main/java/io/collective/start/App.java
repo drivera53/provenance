@@ -29,9 +29,12 @@ public class App extends BasicApp {
         super.start();
 
         { // todo - start the endpoint worker
-            // NoopWorkFinder finder = new NoopWorkFinder();
-            // NoopWorker workers = new NoopWorker();
+            // This doesn't build
+            // EndpointWorkFinder finder = new EndpointWorkFinder(new EndpointDataGateway());
+            // EndpointWorker worker = new EndpointWorker(new RestTemplate(), gateway);
+            // List<Worker<EndpointTask>> workers = Collections.singletonList(worker);
             // WorkScheduler<EndpointTask> scheduler = new WorkScheduler<>(finder, workers, 300);
+            // scheduler.start();
         }
     }
 
