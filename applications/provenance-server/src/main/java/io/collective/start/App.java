@@ -12,6 +12,11 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.TimeZone;
 
+import io.collective.workflow.WorkScheduler;
+import io.collective.endpoints.EndpointTask;
+import io.collective.workflow.NoopWorkFinder;
+import io.collective.workflow.NoopWorker;
+
 
 public class App extends BasicApp {
     private static ArticleDataGateway articleDataGateway = new ArticleDataGateway(List.of(
@@ -24,7 +29,12 @@ public class App extends BasicApp {
         super.start();
 
         { // todo - start the endpoint worker
-
+            // This doesn't build
+            // EndpointWorkFinder finder = new EndpointWorkFinder(new EndpointDataGateway());
+            // EndpointWorker worker = new EndpointWorker(new RestTemplate(), gateway);
+            // List<Worker<EndpointTask>> workers = Collections.singletonList(worker);
+            // WorkScheduler<EndpointTask> scheduler = new WorkScheduler<>(finder, workers, 300);
+            // scheduler.start();
         }
     }
 
